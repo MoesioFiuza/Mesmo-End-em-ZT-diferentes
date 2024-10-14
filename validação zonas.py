@@ -1,8 +1,7 @@
 import pandas as pd
 
-planilha = r'C:\Users\moesios\Desktop\qwe\BANCO DE DADOS_ATUALIZADO REV01_v2.xlsx'
-endereços = r'C:\Users\moesios\Desktop\AJUSTES P14\endereços.xlsx'
-
+planilha = r'Banco de dados'
+endereços = r'Planilha com todos os endereços'
 df_deslocamentos = pd.read_excel(planilha, sheet_name='DESLOCAMENTO')
 df_endereços = pd.read_excel(endereços, sheet_name='ENDEREÇOS')
 
@@ -27,4 +26,4 @@ df_result['ZONA_2'] = df_result['ZONAS'].apply(lambda x: x.split(', ')[1] if pd.
 
 df_result = df_result.drop(columns=['ZONAS'])
 
-df_result.to_excel(r'C:\Users\moesios\Desktop\AJUSTES P14\VERIFICAÇÃO.xlsx', index=False)
+df_result.to_excel(r'caminho saída', index=False)
